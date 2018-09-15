@@ -1,33 +1,44 @@
 import logo from './logo.jpg';
 import './App.css';
 import Login from "./components/Login";
-import React, { Component } from 'react';
+import Course from "./components/Course";
+import CourseList from "./components/CourseList";
+import React, {Component} from 'react';
 import {
-  Route,
-  HashRouter
+	Route,
+	HashRouter
 } from "react-router-dom";
 import {
-  PageHeader,
-  Image,
+	PageHeader,
+	Image,
 } from "react-bootstrap";
 
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <PageHeader className="App-header">
-          <Image src={logo} className="App-logo" />{' '}Welcome
-        </PageHeader>
-        <HashRouter>
-          <div className="content">
-            <Route exact path="/" component={Login} />
-          </div>
-        </HashRouter>
-      </div>
 
-    );
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			greeting : "Welcome"
+		}
+	}
+
+	render() {
+		return (
+			<div className="App">
+				<PageHeader className="App-header">
+					<Image src={logo} className="App-logo"/>{' '}{this.state.greeting}
+				</PageHeader>
+				<HashRouter>
+					<div className="content">
+						<Route exact path="/" component={Login}/>
+						<Route exact path="/course" component={Course}/>
+						<Route exact path="/courses" component={CourseList}/>
+					</div>
+				</HashRouter>
+			</div>
+		);
+	}
 }
 
 export default App;
