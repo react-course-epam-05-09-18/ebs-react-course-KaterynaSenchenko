@@ -3,48 +3,32 @@ import {Button, Grid, Row, Col} from "react-bootstrap";
 
 class CourseListItem extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			title: "",
-			duration: "",
-			date: "",
-			description: ""
-		}
-	}
-
-	render() {
-		return (
-			<Grid>
-				<Row className="show-grid">
-					<Col>
-						<Row>
-							<Col>
-								<b>{this.state.title}</b>
-							</Col>
-							<Col>
-								{this.state.duration}
-							</Col>
-							<Col>
-								{this.state.date}
-							</Col>
-						</Row>
-						<Row>
-							{this.state.description}
-						</Row>
-					</Col>
-					<Col>
-						<Row>
-							<Button type="submit">Edit</Button>
-						</Row>
-						<Row>
-							<Button type="submit">Delete</Button>
-						</Row>
-					</Col>
-				</Row>
-			</Grid>
-		);
-	}
+  render() {
+    return (
+      <Grid>
+          <Col sm={10}>
+            <Row>
+              <Col sm={4}>
+                <b>{this.props.title}</b>
+              </Col>
+              <Col sm={4}>
+                {this.props.duration}
+              </Col>
+              <Col sm={4}>
+                {this.props.date}
+              </Col>
+            </Row>
+            <Row>
+              {this.props.description}
+            </Row>
+          </Col>
+          <Col>
+              <Button type="submit">Edit</Button>
+              <Button type="submit">Delete</Button>
+          </Col>
+      </Grid>
+    );
+  }
 }
 
 export default CourseListItem;
