@@ -1,7 +1,13 @@
 import React from 'react';
-import {ListGroup, ListGroupItem, Button, Form, FormControl, FormGroup, Panel} from 'react-bootstrap';
-import CourseListItem from "./CourseListItem";
-import Header from "./Header";
+import {
+	ListGroup,
+	Button,
+	Form,
+	FormControl,
+	FormGroup,
+} from 'react-bootstrap';
+import {CourseListItem} from "./CourseListItem";
+import {Header} from "./common/Header";
 
 class CourseList extends React.Component {
 
@@ -42,7 +48,9 @@ class CourseList extends React.Component {
 
     return (
       <div>
-        <Header greeting={this.state.greeting}/>
+        <Header
+					pageTitle={this.state.greeting}
+				/>
         <Form inline>
           <FormGroup controlId="searchParameter">
             <FormControl type="text" placeholder="enter name or date"/>
@@ -64,10 +72,10 @@ class CourseList extends React.Component {
         title={course.title}
         description={course.description}
         duration={course.duration}
-        date={course.date}>
-      </CourseListItem>;
+        date={course.date}
+			/>;
     });
   }
 }
 
-export default CourseList;
+export {CourseList};

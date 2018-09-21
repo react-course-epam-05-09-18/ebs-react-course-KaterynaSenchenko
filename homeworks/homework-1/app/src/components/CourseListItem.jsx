@@ -1,7 +1,13 @@
-import React, {Component} from "react";
-import {Button, Grid, Row, Col} from "react-bootstrap";
+import React from "react";
+import {
+	Button,
+	Grid,
+	Row,
+	Col
+} from "react-bootstrap";
+import PropTypes from "prop-types";
 
-class CourseListItem extends Component {
+class CourseListItem extends React.Component {
 
   render() {
     return (
@@ -31,4 +37,11 @@ class CourseListItem extends Component {
   }
 }
 
-export default CourseListItem;
+CourseListItem.propTypes = {
+	title: PropTypes.string,
+	duration: PropTypes.number,
+	date: PropTypes.string,
+	description: PropTypes.string
+};
+
+export {CourseListItem};

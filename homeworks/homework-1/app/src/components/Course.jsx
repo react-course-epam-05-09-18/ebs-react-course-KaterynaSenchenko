@@ -1,20 +1,27 @@
-import React, {Component} from "react";
-import {Button, Col, ControlLabel, Form, FormControl, FormGroup} from "react-bootstrap";
-import Header from "./Header"
+import React from "react";
+import {
+	Button,
+	Col,
+	ControlLabel,
+	Form,
+	FormControl,
+	FormGroup
+} from "react-bootstrap";
+import {Header} from "./common/Header"
 
-class Course extends Component {
+class Course extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      greeting: "Edit course"
+      title: "Edit course"
     }
   }
 
   render() {
     return (
       <div>
-        <Header greeting={this.state.greeting}/>
+        <Header pageTitle={this.state.title}/>
         <Form horizontal>
           <FormGroup controlId="title">
             <Col componentClass={ControlLabel} sm={4}>
@@ -64,4 +71,4 @@ class Course extends Component {
   }
 }
 
-export default Course;
+export {Course};

@@ -1,8 +1,15 @@
-import React, {Component} from "react";
-import {Button, Form, FormGroup, FormControl, ControlLabel, Col} from "react-bootstrap";
-import Header from "./Header"
+import React from "react";
+import {
+	Button,
+	Form,
+	FormGroup,
+	FormControl,
+	ControlLabel,
+	Col
+} from "react-bootstrap";
+import {Header} from "./common/Header"
 
-class Login extends Component {
+class Login extends React.Component {
 
   constructor(props) {
     super(props);
@@ -16,7 +23,9 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <Header greeting={this.state.greeting}/>
+        <Header
+					pageTitle={this.state.greeting}
+				/>
         <Form horizontal>
           <FormGroup controlId="email">
             <Col componentClass={ControlLabel} sm={4}>
@@ -53,4 +62,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export {Login};
