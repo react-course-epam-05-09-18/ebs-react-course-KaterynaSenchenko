@@ -12,7 +12,7 @@ class CourseListItem extends React.Component {
   render() {
     return (
       <Grid>
-          <Col sm={10}>
+          <Col sm={8}>
             <Row>
               <Col sm={4}>
                 <b>{this.props.title}</b>
@@ -40,7 +40,7 @@ class CourseListItem extends React.Component {
 CourseListItem.propTypes = {
 	title: PropTypes.string,
 	duration: PropTypes.number,
-	date: PropTypes.string,
+	date: PropTypes.instanceOf(Date),
 	description: PropTypes.string
 };
 

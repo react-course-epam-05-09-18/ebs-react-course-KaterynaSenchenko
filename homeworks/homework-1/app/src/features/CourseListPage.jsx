@@ -6,10 +6,11 @@ import {
 	FormControl,
 	FormGroup,
 } from 'react-bootstrap';
-import {CourseListItem} from "./CourseListItem";
-import {Header} from "./common/Header";
+import {CourseListItem} from "../components/CourseListItem";
+import {Header} from "../components/common/Header";
+import  './CourseListPage.css';
 
-class CourseList extends React.Component {
+class CourseListPage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -17,27 +18,27 @@ class CourseList extends React.Component {
       courses: [
         {
           id: 1,
-          title: 'Course 1',
+          title: 'CourseForm 1',
           duration: '180',
           date: '12.12.12',
           description: 'Description1'
         },
         {
           id: 2,
-          title: 'Course 2',
+          title: 'CourseForm 2',
           duration: '20',
           date: '12.12.12',
           description: 'Description2'
         },
         {
           id: 3,
-          title: 'Course 3',
+          title: 'CourseForm 3',
           duration: '100',
           date: '12.12.12',
           description: 'Description3'
         }
       ],
-      greeting: "Courses"
+      title: "Courses"
     };
   }
 
@@ -49,12 +50,13 @@ class CourseList extends React.Component {
     return (
       <div>
         <Header
-					pageTitle={this.state.greeting}
+					pageTitle={this.state.title}
 				/>
+
         <Form inline>
           <FormGroup controlId="searchParameter">
             <FormControl type="text" placeholder="enter name or date"/>
-          </FormGroup>{' '}
+          </FormGroup>
           <Button type="submit">Search</Button>
           <Button type="submit">Add course</Button>
         </Form>
@@ -73,9 +75,10 @@ class CourseList extends React.Component {
         description={course.description}
         duration={course.duration}
         date={course.date}
+				key={course.id + '-key'}
 			/>;
     });
   }
 }
 
-export {CourseList};
+export {CourseListPage};

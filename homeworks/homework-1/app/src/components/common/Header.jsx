@@ -5,13 +5,14 @@ import {
 } from "react-bootstrap";
 import PropTypes from 'prop-types';
 import logo from "../../logo.jpg";
+import './Header.css';
 
 class Header extends React.Component {
 
   render() {
     return (
-      <PageHeader className="App-header">
-        <Image src={logo} className="App-logo"/>{' '}{this.props.pageTitle}
+      <PageHeader className="header">
+        <Image src={logo} className="header__logo"/>{this.props.pageTitle}
       </PageHeader>
     );
   }
