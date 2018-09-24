@@ -55,7 +55,9 @@ class CourseListPage extends React.Component {
 
         <Form inline>
           <FormGroup controlId="searchParameter">
-            <FormControl type="text" placeholder="enter name or date"/>
+            <FormControl
+              type="text"
+              placeholder="enter name or date"/>
           </FormGroup>
           <Button type="submit">Search</Button>
           <Button type="submit">Add course</Button>

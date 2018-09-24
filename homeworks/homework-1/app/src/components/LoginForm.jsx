@@ -26,7 +26,9 @@ class LoginForm extends React.Component {
 						Email
 					</Col>
 					<Col sm={2}>
-						<FormControl type="email" placeholder="Email"/>
+						<FormControl
+							type="email"
+							placeholder="Email"/>
 					</Col>
 					<Col componentClass={ControlLabel}>
 						{this.state.hintEmail}
@@ -38,7 +40,9 @@ class LoginForm extends React.Component {
 						Password
 					</Col>
 					<Col sm={2}>
-						<FormControl type="password" placeholder="Password"/>
+						<FormControl
+							type="password"
+							placeholder="Password"/>
 					</Col>
 					<Col componentClass={ControlLabel}>
 						{this.state.hintPassword}

@@ -19,7 +19,9 @@ class CourseForm extends React.Component {
 						Title
 					</Col>
 					<Col sm={2}>
-						<FormControl type="text" placeholder="Title"/>
+						<FormControl
+							type="text"
+							placeholder="Title"/>
 					</Col>
 				</FormGroup>
 
@@ -28,7 +30,9 @@ class CourseForm extends React.Component {
 						Description
 					</Col>
 					<Col sm={2}>
-						<FormControl componentClass="textarea" placeholder="Text area"/>
+						<FormControl
+							componentClass="textarea"
+							placeholder="Text area"/>
 					</Col>
 				</FormGroup>
 
@@ -46,14 +50,19 @@ class CourseForm extends React.Component {
 						Duration
 					</Col>
 					<Col sm={1}>
-						<FormControl type="number" min="0" placeholder="Min"/>
+						<FormControl
+							type="number"
+							min="0"
+							placeholder="Min"/>
 					</Col>
 				</FormGroup>
 
 				<FormGroup>
 					<Col smOffset={4} sm={4}>
 						<Button type="submit">Save</Button>
-						<Button className="button--cancel" type="submit">Cancel</Button>
+						<Button
+							className="button--cancel"
+							type="submit">Cancel</Button>
 					</Col>
 				</FormGroup>
 			</Form>
