@@ -3,9 +3,9 @@ import {
   Route,
   BrowserRouter
 } from "react-router-dom";
-import {LoginPage} from "./features/LoginPage";
-import {CourseEditPage} from "./features/CourseEditPage";
-import {CourseListPage} from "./features/CourseListPage";
+import { LoginPage } from "./features/LoginPage";
+import { CourseEditPage } from "./features/CourseEditPage";
+import { CourseListPage } from "./features/CourseListPage";
 import './App.css';
 
 class App extends React.Component {
@@ -15,9 +15,9 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
           <div className="content">
-            <Route exact path="/" component={LoginPage}/>
-            <Route exact path="/course" component={CourseEditPage}/>
-            <Route exact path="/courses" component={CourseListPage}/>
+            <Route exact path="/" component={LoginPage} />
+            <Route exact path="/course" component={CourseEditPage} />
+            <Route exact path="/courses" component={CourseListPage} />
           </div>
         </BrowserRouter>
       </div>
@@ -25,4 +25,4 @@ class App extends React.Component {
   }
 }
 
-export {App};
+export { App };

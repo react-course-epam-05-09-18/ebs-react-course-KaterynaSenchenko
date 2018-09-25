@@ -21,7 +21,7 @@ class CourseForm extends React.Component {
 					<Col sm={2}>
 						<FormControl
 							type="text"
-							placeholder="Title"/>
+							placeholder="Title" />
 					</Col>
 				</FormGroup>
 
@@ -32,7 +32,7 @@ class CourseForm extends React.Component {
 					<Col sm={2}>
 						<FormControl
 							componentClass="textarea"
-							placeholder="Text area"/>
+							placeholder="Text area" />
 					</Col>
 				</FormGroup>
 
@@ -41,7 +41,7 @@ class CourseForm extends React.Component {
 						Date
 					</Col>
 					<Col sm={2}>
-						<FormControl type="text" placeholder="Date"/>
+						<FormControl type="text" placeholder="Date" />
 					</Col>
 				</FormGroup>
 
@@ -53,7 +53,7 @@ class CourseForm extends React.Component {
 						<FormControl
 							type="number"
 							min="0"
-							placeholder="Min"/>
+							placeholder="Min" />
 					</Col>
 				</FormGroup>
 
@@ -70,4 +70,4 @@ class CourseForm extends React.Component {
 	}
 }
 
-export {CourseForm};
+export { CourseForm };

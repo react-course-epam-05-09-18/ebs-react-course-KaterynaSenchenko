@@ -1,24 +1,17 @@
 import React from "react";
-import {Header} from "../components/common/Header"
-import {CourseForm} from "../components/CourseForm";
+import { Header } from "../components/index"
+import { CourseForm } from "../components/index";
 
 class CourseEditPage extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {
-			title: "Edit course"
-		}
-	}
 
 	render() {
 		return (
 			<div>
-				<Header pageTitle={this.state.title}/>
-				<CourseForm/>
+				<Header pageTitle="Edit course" />
+				<CourseForm />
 			</div>
 		);
 	}
 }
 
-export {CourseEditPage};
+export { CourseEditPage };

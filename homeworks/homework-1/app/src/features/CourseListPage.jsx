@@ -1,14 +1,14 @@
 import React from 'react';
 import {
-	ListGroup,
-	Button,
-	Form,
-	FormControl,
-	FormGroup,
+  ListGroup,
+  Button,
+  Form,
+  FormControl,
+  FormGroup,
 } from 'react-bootstrap';
-import {CourseListItem} from "../components/CourseListItem";
-import {Header} from "../components/common/Header";
-import  './CourseListPage.css';
+import { CourseListItem } from "../components/index";
+import { Header } from "../components/index";
+import './CourseListPage.css';
 
 class CourseListPage extends React.Component {
 
@@ -37,50 +37,46 @@ class CourseListPage extends React.Component {
           date: '12.12.12',
           description: 'Description3'
         }
-      ],
-      title: "Courses"
+      ]
     };
   }
 
   render() {
-    const {
-      courses
-    } = this.state;
+
+    const corsesList = this.state.courses.map((course, index) => this.renderCourse(course, index));
 
     return (
       <div>
         <Header
-					pageTitle={this.state.title}
-				/>
+          pageTitle="Courses"
+        />
 
         <Form inline>
           <FormGroup controlId="searchParameter">
             <FormControl
               type="text"
-              placeholder="enter name or date"/>
+              placeholder="enter name or date" />
           </FormGroup>
           <Button type="submit">Search</Button>
           <Button type="submit">Add course</Button>
         </Form>
 
         <ListGroup componentClass="ul">
-          {this.renderCourses(courses)}
+          {corsesList}
         </ListGroup>
       </div>
     );
   }
 
-  renderCourses(courses) {
-    return courses.map(course => {
-      return <CourseListItem
-        title={course.title}
-        description={course.description}
-        duration={course.duration}
-        date={course.date}
-				key={course.id + '-key'}
-			/>;
-    });
+  renderCourse(course, index) {
+    return <CourseListItem
+      title={course.title}
+      description={course.description}
+      duration={course.duration}
+      date={course.date}
+      key={index + '-key'}
+    />;
   }
 }
 
-export {CourseListPage};
+export { CourseListPage };

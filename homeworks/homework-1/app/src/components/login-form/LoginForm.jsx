@@ -10,14 +10,6 @@ import {
 
 class LoginForm extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			hintEmail: "*enter your email",
-			hintPassword: "*enter your password"
-		}
-	}
-
 	render() {
 		return (
 			<Form horizontal>
@@ -28,10 +20,10 @@ class LoginForm extends React.Component {
 					<Col sm={2}>
 						<FormControl
 							type="email"
-							placeholder="Email"/>
+							placeholder="Email" />
 					</Col>
 					<Col componentClass={ControlLabel}>
-						{this.state.hintEmail}
+						*enter your email
 					</Col>
 				</FormGroup>
 
@@ -42,10 +34,10 @@ class LoginForm extends React.Component {
 					<Col sm={2}>
 						<FormControl
 							type="password"
-							placeholder="Password"/>
+							placeholder="Password" />
 					</Col>
 					<Col componentClass={ControlLabel}>
-						{this.state.hintPassword}
+						*enter your password
 					</Col>
 				</FormGroup>
 
@@ -59,4 +51,4 @@ class LoginForm extends React.Component {
 	}
 }
 
-export {LoginForm};
+export { LoginForm };

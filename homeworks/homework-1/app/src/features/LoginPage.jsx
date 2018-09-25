@@ -1,26 +1,19 @@
 import React from "react";
-import {Header} from "../components/common/Header"
-import {LoginForm} from "../components/LoginForm";
+import { Header } from "../components/index"
+import { LoginForm } from "../components/index";
 
 class LoginPage extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {
-			title: "Welcome"
-		}
-	}
 
 	render() {
 		return (
 			<div>
 				<Header
-					pageTitle={this.state.title}
+					pageTitle="Welcome"
 				/>
-				<LoginForm/>
+				<LoginForm />
 			</div>
 		);
 	}
 }
 
-export {LoginPage};
+export { LoginPage };
