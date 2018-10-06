@@ -7,12 +7,30 @@ import {
 	ControlLabel,
 	Col
 } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
 
 class LoginForm extends React.Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			input: {
+				login: '',
+				password: ''
+			}
+		};
+	}
+
+	handleSubmit = event => {
+		event.preventDefault();
+		localStorage.setItem('login', this.state.input.login);
+		localStorage.setItem('authenticated', true);
+		this.props.history.push("/courses");
+	}
+
 	render() {
 		return (
-			<Form horizontal>
+			<Form horizontal onSubmit={this.handleSubmit}>
 				<FormGroup controlId="email">
 					<Col componentClass={ControlLabel} sm={4}>
 						Email
@@ -51,4 +69,4 @@ class LoginForm extends React.Component {
 	}
 }
 
-export { LoginForm };
+export const LoginFormWithRouter = withRouter(LoginForm)
