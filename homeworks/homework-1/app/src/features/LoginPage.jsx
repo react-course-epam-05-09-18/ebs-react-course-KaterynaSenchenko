@@ -1,6 +1,6 @@
 import React from "react";
-import { Header } from "../components/index"
-import { LoginForm } from "../components/index";
+import { Header } from "../components"
+import { LoginFormWithRouter } from "../components";
 
 class LoginPage extends React.Component {
 
@@ -10,7 +10,7 @@ class LoginPage extends React.Component {
 				<Header
 					pageTitle="Welcome"
 				/>
-				<LoginForm />
+				<LoginFormWithRouter />
 			</div>
 		);
 	}

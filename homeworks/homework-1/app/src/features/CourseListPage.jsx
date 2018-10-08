@@ -6,8 +6,9 @@ import {
   FormControl,
   FormGroup,
 } from 'react-bootstrap';
-import { CourseListItem } from "../components/index";
-import { Header } from "../components/index";
+import { Link } from 'react-router-dom';
+import { CourseListItem } from "../components";
+import { Header } from "../components";
 import './CourseListPage.css';
 
 class CourseListPage extends React.Component {
@@ -19,21 +20,21 @@ class CourseListPage extends React.Component {
         {
           id: 1,
           title: 'CourseForm 1',
-          duration: '180',
+          duration: 180,
           date: '12.12.12',
           description: 'Description1'
         },
         {
           id: 2,
           title: 'CourseForm 2',
-          duration: '20',
+          duration: 20,
           date: '12.12.12',
           description: 'Description2'
         },
         {
           id: 3,
           title: 'CourseForm 3',
-          duration: '100',
+          duration: 100,
           date: '12.12.12',
           description: 'Description3'
         }
@@ -57,8 +58,10 @@ class CourseListPage extends React.Component {
               type="text"
               placeholder="enter name or date" />
           </FormGroup>
-          <Button type="submit">Search</Button>
-          <Button type="submit">Add course</Button>
+          <Button type="submit" bsStyle="info">Search</Button>
+          <Button type="submit" bsStyle="info">
+            <Link to={'/courses/new'}>Add course</Link>
+          </Button>
         </Form>
 
         <ListGroup componentClass="ul">
@@ -74,6 +77,7 @@ class CourseListPage extends React.Component {
       description={course.description}
       duration={course.duration}
       date={course.date}
+      id={course.id}
       key={index + '-key'}
     />;
   }
