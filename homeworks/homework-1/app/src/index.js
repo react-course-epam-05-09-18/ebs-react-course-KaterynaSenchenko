@@ -1,9 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import {App} from './App';
-import registerServiceWorker from './registerServiceWorker';
-import 'bootstrap/dist/css/bootstrap.css';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import { App } from './App';
+import * as fromLogin from './store';
+
+import './index.css';
+
+const reducers = combineReducers({
+  ...fromLogin.reducers
+});
+
+const middleware = [thunk];
+const composeEnhancers =
+  process.env.NODE_ENV === 'development' &&
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+    : compose;
+
+const enhancer = composeEnhancers(applyMiddleware(...middleware));
+const store = createStore(reducers, enhancer);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);

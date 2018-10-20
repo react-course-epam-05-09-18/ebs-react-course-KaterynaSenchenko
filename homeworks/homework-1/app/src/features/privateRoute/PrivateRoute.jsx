@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
+import { isAuthenticated } from '../../store'
 
 export const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -8,8 +9,4 @@ export const PrivateRoute = ({ component: Component, ...rest }) => (
       : <Redirect to='/login' />
   )} />
 )
-
-export const isAuthenticated = () => {
-  return JSON.parse(localStorage.getItem('authenticated'));
-};
   
