@@ -5,24 +5,27 @@ import {
   Row,
   Col
 } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
 
 class CourseListItem extends React.Component {
 
   static get propTypes() {
     return {
+      id: PropTypes.number,
       title: PropTypes.string,
       duration: PropTypes.number,
-      date: PropTypes.instanceOf(Date),
+      date: PropTypes.string,
       description: PropTypes.string
     };
   }
 
   static get defaultProps() {
     return {
+      id: 123456687989,
       title: "New Course",
       duration: 60,
-      date: new Date(),
+      date: "12.12.12",
       description: "Amazing, jaw-dropping, fascinating and simply awesome course :)"
     }
   }
@@ -47,8 +50,10 @@ class CourseListItem extends React.Component {
           </Row>
         </Col>
         <Col>
-          <Button type="submit">Edit</Button>
-          <Button type="submit">Delete</Button>
+          <Button type="submit" bsStyle="success">
+            <Link to={`/courses/${this.props.id}`}>Edit</Link>
+          </Button>
+          <Button type="submit" bsStyle="danger">Delete</Button>
         </Col>
       </Grid>
     );

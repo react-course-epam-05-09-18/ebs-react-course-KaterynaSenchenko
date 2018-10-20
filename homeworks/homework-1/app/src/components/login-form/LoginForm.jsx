@@ -7,20 +7,35 @@ import {
 	ControlLabel,
 	Col
 } from "react-bootstrap";
+import { compose } from 'recompose';
+import { Header } from "../common/header/Header"
+import { withLoginFields } from './withLoginFields';
+import { withLoginEnhancer } from './withLoginEnhancer';
 
-class LoginForm extends React.Component {
+const LoginFormComponent = props => {
+	const {
+		formFields: { login, password },
+		handleSubmit,
+		handleChange
+	} = props;
 
-	render() {
-		return (
-			<Form horizontal>
+	return (
+		<div>
+			<Header
+				pageTitle="Welcome"
+			/>
+			<Form horizontal onSubmit={handleSubmit}>
 				<FormGroup controlId="email">
 					<Col componentClass={ControlLabel} sm={4}>
 						Email
 					</Col>
 					<Col sm={2}>
 						<FormControl
+							name="login"
 							type="email"
-							placeholder="Email" />
+							value={login.value}
+							placeholder="Email"
+							onChange={handleChange} />
 					</Col>
 					<Col componentClass={ControlLabel}>
 						*enter your email
@@ -33,8 +48,11 @@ class LoginForm extends React.Component {
 					</Col>
 					<Col sm={2}>
 						<FormControl
+							name="password"
 							type="password"
-							placeholder="Password" />
+							value={password.value}
+							placeholder="Password"
+							onChange={handleChange} />
 					</Col>
 					<Col componentClass={ControlLabel}>
 						*enter your password
@@ -47,8 +65,15 @@ class LoginForm extends React.Component {
 					</Col>
 				</FormGroup>
 			</Form>
-		);
-	}
+		</div>
+	);
 }
 
-export { LoginForm };
+LoginFormComponent.ownProps = {
+	onSubmit: () => { },
+};
+
+export const LoginForm = compose(
+	withLoginFields,
+	withLoginEnhancer
+)(LoginFormComponent);
